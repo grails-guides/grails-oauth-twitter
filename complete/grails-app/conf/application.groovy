@@ -25,13 +25,20 @@ grails {
 	plugin {
 		springsecurity {
 			rest {
+				token {
+					storage {
+						jwt {
+							secret = 'foobar123'*4 //<1>
+						}
+					}
+				}
 				oauth {
-					frontendCallbackUrl = { String tokenValue -> "http://localhost:8080/successfullyLoggedIn/index#token=${tokenValue}" } //<1>
+					frontendCallbackUrl = { String tokenValue -> "http://localhost:8080/successfullyLoggedIn/index#token=${tokenValue}" } //<2>
 					twitter {
-						client = org.pac4j.oauth.client.TwitterClient //<2>
-						key = 'RN9ffChYIdMIvvbZ4sLAyKwGl' //<3>
-						secret = 'LdkW63J56ZlaGVPwQE2soCItWRRB6OiEJLPHHGS2Cu1NIKHzS4' //<4>
-						defaultRoles = ['ROLE_USER', 'ROLE_TWITTER'] //<5>
+						client = org.pac4j.oauth.client.TwitterClient //<3>
+						key = 'RN9ffChYIdMIvvbZ4sLAyKwGl' //<4>
+						secret = 'LdkW63J56ZlaGVPwQE2soCItWRRB6OiEJLPHHGS2Cu1NIKHzS4' //<5>
+						defaultRoles = ['ROLE_USER', 'ROLE_TWITTER'] //<6>
 					}
 				}
 			}
@@ -39,4 +46,4 @@ grails {
 	}
 }
 
-grails.plugin.springsecurity.providerNames = ['anonymousAuthenticationProvider'] // <6>
+grails.plugin.springsecurity.providerNames = ['anonymousAuthenticationProvider'] // <7>

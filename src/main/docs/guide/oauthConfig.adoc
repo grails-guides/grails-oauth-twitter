@@ -6,31 +6,17 @@ Create a file `application.groovy` with the following content:
 ----
 include::{sourceDir}/grails-app/conf/application.groovy[indent=0]
 ----
-<1> Callback url, after approving your Twitter user this is where Twitter will attempt to return with your authentication token
-<2> Which pac4j client to use; in our case the Twitter client
-<3> Your Consumer Key (API Key)
-<4> Your Consumer Secret (API Secret)
-<5> Specific roles that Twitter authentication is allowed to access
+<1> Secure the token storage. The secret can be set to any value.
+<2> Callback url, after approving your Twitter user this is where Twitter will attempt to return with your authentication token
+<3> Which pac4j client to use; in our case the Twitter client
+<4> Your Consumer Key (API Key)
+<5> Your Consumer Secret (API Secret)
+<6> Specific roles that Twitter authentication is allowed to access
 <7> We are going to authenticate our users only against Twitter. Thus, we use only the anonymous authentication provider. Read more about https://grails-plugins.github.io/grails-spring-security-core/latest/#authenticationProviders[Authentication Providers] in Spring Security Core Plugin documentation.
 
 NOTE: We are not persisting User information in the database. You may have noticed we don't have `User`, `Role`, `UserRole` domain classes in the project. Neither we setup configuration values such as `userLookUp.userDomainClass` etc.
 
-We need to override one bean exposed by Grails Spring Security Rest plugin.
-
-[source,groovy]
-.grails-app/conf/spring/resources.groovy
-----
-include::{sourceDir}/grails-app/conf/spring/resources.groovy[indent=0]
-----
-
-[source,groovy]
-.src/main/groovy/demo/CustomOauthUserDetailsService.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/CustomOauthUserDetailsService.groovy[indent=0]
-----
-
-We override also the `login/auth` view. So that we no longer show a username/password form in that page.
-
+Now we override the `login/auth` view. So that we no longer show a username/password form in that page.
 
 [source,groovy]
 .grails-app/views/login/auth.gsp
