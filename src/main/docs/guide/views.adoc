@@ -63,4 +63,4 @@ This will redirect you to the normal Twitter login / account selection you are a
 include::{sourceDir}/grails-app/views/login/_loginWithTwitter.gsp[]
 ----
 
-NOTE: `twitterSignin.png` is already provide for you in assets.
+NOTE: `twitterSignin.png` is already provided for you in assets.
