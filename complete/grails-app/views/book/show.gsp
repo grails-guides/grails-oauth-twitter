@@ -9,9 +9,15 @@
         <g:if test="${bookInstance}">
             <h1><a href="${bookInstance.href}">${bookInstance.title}</a></h1>
             <sec:ifLoggedIn>
-                <g:form controller="bookFavourite" action="favourite">
+                <g:form controller="bookFavourite" action="${bookFavourite != null ? 'unfavourite' : 'favourite'}">
                     <g:hiddenField name="bookId" value="${bookInstance.id}"/>
-                    <input type="submit" class="btn btn-default" value="${g.message(code: 'book.favourite', default: 'Favourite')}"/>
+
+                    <g:if test="${bookFavourite}">
+                        <input type="submit" class="btn btn-default" value="${g.message(code: 'book.unfavourite', default: 'Unfavourite')}"/>
+                    </g:if>
+                    <g:else>
+                        <input type="submit" class="btn btn-default" value="${g.message(code: 'book.favourite', default: 'Favourite')}"/>
+                    </g:else>
                 </g:form>
             </sec:ifLoggedIn>
             <p>${bookInstance.about}</p>

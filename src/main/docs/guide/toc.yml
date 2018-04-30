@@ -8,7 +8,10 @@ oauth2:
 appConfig:
   title: Setting up your app
   dependencies: Add Security Dependencies
-  oauthConfig: Configure Security and OAuth
+  tokenReader: Custom Token Reader
+  oauthConfig: Configure Security
+  logout: Logout Handlers
+  authController: JWT Cookie
   logging: Enhanced Logging
 buildingTheApp:
   title: Building your app

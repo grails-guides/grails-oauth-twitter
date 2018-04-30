@@ -46,7 +46,7 @@
         </g:link>
         <span>|</span>
         <sec:ifNotLoggedIn>
-            <g:render template="/login/loginWithTwitter"/>
+            <g:render template="/auth/loginWithTwitter"/>
         </sec:ifNotLoggedIn>
         <sec:ifLoggedIn>
             <g:form controller="logout" style="display: inline;">

@@ -26,20 +26,19 @@ include::{sourceDir}/grails-app/views/layouts/main.gsp[indent=0, tag=menu]
 ----
 In the above code we:
 
-* Center our menu; link to list all books; link to list favourite books, login with google / logout
-* Include template with login link
-* Link to our logout controller to invalidate spring context
-* Add a message block so we can view our login / logout messages
+ * Center our menu; link to list all books; link to list favourite books, "sign in with twitter" / logout
+ * Include template with login link
+ * Include template with logout link
+ * Add a message block so we can view our login / logout messages
 
-We create a template to contain our link to trigger our OAuth login through Twitter;
-the link `/oauth/authenticate` is provided from the `spring-security-rest` plugin and ends with the provider we
-are using `/twitter` for the link `/oauth/authenticate/twitter`.
-This will redirect you to the normal Twitter login / account selection you are already familiar with.
+We create a template to contain our link to trigger our OAuth login through Twitter; the link `/oauth/authenticate`
+is provided from the `spring-security-rest` plugin and ends with the provider we are using `/twitter` for the
+link `/oauth/authenticate/twitter`. This will redirect you to the normal Twitter login page that you are already familiar with.
 
 [source,html]
-.grails-app/views/login/_loginWithTwitter.gsp
+.grails-app/views/auth/_loginWithTwitter.gsp
 ----
-include::{sourceDir}/grails-app/views/login/_loginWithTwitter.gsp[]
+include::{sourceDir}/grails-app/views/auth/_loginWithTwitter.gsp[]
 ----
 
-NOTE: `twitterSignin.png` is already provided for you in assets.
+NOTE: `sign-in-with-twitter-link.png` is already provided for you in assets

@@ -9,6 +9,7 @@ class BookFavouriteController {
     static allowedMethods = [
             index: 'GET',
             favourite: 'POST',
+            unfavourite: 'POST',
     ]
 
     SpringSecurityService springSecurityService
@@ -27,6 +28,13 @@ class BookFavouriteController {
     def favourite(Long bookId) {
         String username = loggedUsername()
         bookFavouriteDataService.save(bookId, username) //<3>
+        redirect(action: 'index')
+    }
+
+    @Secured('isAuthenticated()')
+    def unfavourite(Long bookId) {
+        String username = loggedUsername()
+        bookFavouriteDataService.delete(bookId, username) //<3>
         redirect(action: 'index')
     }
 

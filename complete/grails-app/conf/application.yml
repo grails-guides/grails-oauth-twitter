@@ -126,3 +126,8 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+---
+#tag::grailserverurl[]
+grails:
+    serverURL: http://127.0.0.1:8080
+#end::grailserverurl[]

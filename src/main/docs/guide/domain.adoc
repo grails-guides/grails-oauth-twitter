@@ -1,4 +1,4 @@
-For your domain we will need two domain objects `Book` and `BookFavourite`. Create as follows
+For your domain we will need to domain objects `Book` and `BookFavourite`. Create as follows
 
 [source,groovy]
 .grails-app/domain/demo/Book.groovy
