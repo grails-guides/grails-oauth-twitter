@@ -14,3 +14,5 @@ Create a GORM Data Service for `BookFavourite` domain class CRUD operations.
 ----
 include::{sourceDir}/grails-app/services/demo/BookFavouriteDataService.groovy[]
 ----
+
+<1> You can use http://gorm.grails.org/latest/hibernate/manual/index.html#_jpa_ql_queries[ JPA-QL Queries] with http://gorm.grails.org/latest/hibernate/manual/index.html#dataServices[GORM Data Services].

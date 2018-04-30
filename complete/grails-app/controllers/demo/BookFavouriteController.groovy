@@ -34,7 +34,7 @@ class BookFavouriteController {
     @Secured('isAuthenticated()')
     def unfavourite(Long bookId) {
         String username = loggedUsername()
-        bookFavouriteDataService.delete(bookId, username) //<3>
+        bookFavouriteDataService.delete(bookId, username)
         redirect(action: 'index')
     }
 

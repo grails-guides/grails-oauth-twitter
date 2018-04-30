@@ -2,7 +2,6 @@ package demo
 
 import grails.gorm.services.Query
 import grails.gorm.services.Service
-import groovy.transform.CompileDynamic
 
 @Service(BookFavourite)
 interface BookFavouriteDataService {
